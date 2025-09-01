@@ -29,25 +29,25 @@
 
     <!-- optional hero image -->
     <figure>
-      <img src="/img/lookup/hero1.png" alt="Lookup Box overview (placeholder)">
+      <img src="/img/lookup/hero1.webp" alt="Lookup Box overview (placeholder)">
     </figure>
 
     <article class="writeup nopre">
 
       <h2>first test for connectivity</h2>
       <figure>
-        <img class="img-70" src="/img/lookup/im2.png" alt="Ping target IP">
+        <img class="img-70" src="/img/lookup/im2.webp" alt="Ping target IP">
         <figcaption>i ping the given IP — connection all good</figcaption>
       </figure>
 
       <h2>Nmap scan for Open ports</h2>
       <figure>
-        <img class="img-70" src="/img/lookup/img6.png" alt="Nmap running">
+        <img class="img-70" src="/img/lookup/img6.webp" alt="Nmap running">
         <figcaption>while nmap is running i try to open the IP to the browser</figcaption>
       </figure>
 
       <figure>
-        <img class="img-70" src="/img/lookup/im4.png" alt="Browser error before hosts entry">
+        <img class="img-70" src="/img/lookup/im4.webp" alt="Browser error before hosts entry">
         <figcaption>there is a domain name = <code>lookup.thm</code></figcaption>
       </figure>
 
@@ -55,16 +55,16 @@
       <p>&rarr; <b>nano or vim /etc/hosts/</b></p>
 
       <figure>
-        <img class="img-70" src="/img/lookup/im5.png" alt="Editing /etc/hosts">
+        <img class="img-70" src="/img/lookup/im5.webp" alt="Editing /etc/hosts">
         <figcaption class="cap-one-line cap-wide">after add the ip to its domain name for the DNS, when i refresh its show a login page !!!</figcaption>
       </figure>
 
-        <img class="img-70" src="/img/lookup/im7.png" alt="Editing /etc/hosts">
+        <img class="img-70" src="/img/lookup/im7.webp" alt="Editing /etc/hosts">
 
 
       <h3>Nmap result</h3>
       <figure>
-        <img src="/img/lookup/im3.png" alt="Nmap results show ports">
+        <img src="/img/lookup/im3.webp" alt="Nmap results show ports">
         <figcaption>2 ports are open after scan — <b>http (80)</b> and <b>ssh (22)</b></figcaption>
       </figure>
 
@@ -72,35 +72,35 @@
       <p>but i ran a gobuster in the background maybe i found something more</p>
 
       <figure>
-        <img src="/img/lookup/im8.png" alt="Gobuster">
+        <img src="/img/lookup/im8.webp" alt="Gobuster">
         <figcaption>gobuster running</figcaption>
       </figure>
 
       <p>&gt; Interestingly !!! when i ffuf it i found something !!</p>
       <figure>
-        <img src="/img/lookup/im9.png" alt="ffuf initial findings">
+        <img src="/img/lookup/im9.webp" alt="ffuf initial findings">
         <figcaption>but status code is not 200 so cant really open it but we can know there is something</figcaption>
       </figure>
 
       <p>and then i try use feroxbuster to scan again</p>
       <figure>
-        <img src="/img/lookup/im10.png" alt="feroxbuster finds login.php">
+        <img src="/img/lookup/im10.webp" alt="feroxbuster finds login.php">
         <figcaption>interestingly i found a <code>login.php</code></figcaption>
       </figure>
 
       <p>then i try to burpsuit it</p>
 
      <figure>
-    <img class="zoomable" src="/img/lookup/im11.png"
-        data-full="/img/lookup/im11_big.png"
+    <img class="zoomable" src="/img/lookup/im11.webp"
+        data-full="/img/lookup/im11_big.webp"
         alt="Burp intercepts login.php request">
     <figcaption>burp repeater set up</figcaption>
     </figure>
 
     <!-- side-by-side works too; both are zoomable -->
     <div class="fig-row">
-    <figure><img class="zoomable" src="/img/lookup/im11.png" alt="Req"></figure>
-    <figure><img class="zoomable" src="/img/lookup/im12.png" alt="Resp"></figure>
+    <figure><img class="zoomable" src="/img/lookup/im11.webp" alt="Req"></figure>
+    <figure><img class="zoomable" src="/img/lookup/im12.webp" alt="Resp"></figure>
     </div>
 
 
@@ -114,7 +114,7 @@ username=' OR '1'='1'/*&amp;password=anything
 username=1' OR 1=1 -- &amp;password=anything</pre>
 
       <figure>
-        <img src="/img/lookup/im13.png" alt="No SQLi">
+        <img src="/img/lookup/im13.webp" alt="No SQLi">
         <figcaption>&gt; nothing interesting</figcaption>
       </figure>
 
@@ -123,8 +123,8 @@ username=1' OR 1=1 -- &amp;password=anything</pre>
       <p>&gt; something interesting here</p>
       <figure>
         <div class="fig-row equal">
-        <figure><img class="zoomable" src="/img/lookup/im14.png" alt="Req"></figure>
-        <figure><img class="zoomable" src="/img/lookup/im15.png" alt="Resp"></figure>
+        <figure><img class="zoomable" src="/img/lookup/im14.webp" alt="Req"></figure>
+        <figure><img class="zoomable" src="/img/lookup/im15.webp" alt="Resp"></figure>
         </div>
 
     <figcaption>
@@ -143,7 +143,7 @@ username=1' OR 1=1 -- &amp;password=anything</pre>
       <p>Now i start fuzzing for possible passwords for the user <code>admin</code>. </p>
 
       <figure>
-        <img src="/img/lookup/im16.png" alt="ffuf password fuzzing admin">
+        <img src="/img/lookup/im16.webp" alt="ffuf password fuzzing admin">
         <figcaption>&gt; the pass i found <b>password123</b></figcaption>
       </figure>
 
@@ -152,8 +152,8 @@ username=1' OR 1=1 -- &amp;password=anything</pre>
 
     <figure>
     <div class="fig-row equal">
-        <figure><img class="zoomable" src="/img/lookup/im17.png" alt="Req"></figure>
-        <figure><img class="zoomable" src="/img/lookup/im18.png" alt="Resp"></figure>
+        <figure><img class="zoomable" src="/img/lookup/im17.webp" alt="Req"></figure>
+        <figure><img class="zoomable" src="/img/lookup/im18.webp" alt="Resp"></figure>
     </div>
     <figcaption >
         Using the password with the <code>admin</code> user gives the generic error as before.<br>
@@ -166,7 +166,7 @@ username=1' OR 1=1 -- &amp;password=anything</pre>
     <p>Because when I tested the password found by ffuf. <br> - First i try used password123 with user admin. it said “both wrong.” <br><br> But if I try password12 (missing one char) <br> - the output changes to just “wrong password.”</p>
 
     <figure>
-    <img src="/img/lookup/im19.png" alt="ffuf usernames using found password">
+    <img src="/img/lookup/im19.webp" alt="ffuf usernames using found password">
     <figcaption>
         Then I tried <code>ffuf</code> again with the password I found and fuzzed the usernames.  
         Got a 302 redirect for <code>jose</code> with <code>password123</code> → valid credential pair.
@@ -178,16 +178,16 @@ username=1' OR 1=1 -- &amp;password=anything</pre>
       
       <figure>
          <div class="fig-row equal">
-        <figure><img class="zoomable" src="/img/lookup/im20.png" alt="Login Sucess"></figure>
-        <figure><img class="zoomable" src="/img/lookup/im21.png" alt="Resp"></figure>
+        <figure><img class="zoomable" src="/img/lookup/im20.webp" alt="Login Sucess"></figure>
+        <figure><img class="zoomable" src="/img/lookup/im21.webp" alt="Resp"></figure>
         </div>
         <figcaption>interestingly it redirect to another page name <code>files.lookup.thm</code> so we add this to <code>/etc/hosts</code></figcaption>
       </figure>
 
       <figure>
         <div class="fig-row equal">
-        <figure><img class="zoomable" src="/img/lookup/im22.png" alt="Req"></figure>
-        <figure><img class="zoomable" src="/img/lookup/im23.png" alt="Resp"></figure>
+        <figure><img class="zoomable" src="/img/lookup/im22.webp" alt="Req"></figure>
+        <figure><img class="zoomable" src="/img/lookup/im23.webp" alt="Resp"></figure>
         </div>
         <figcaption>after refresh the website its show like a file manager system?? <br> a bit of google i found out its <b>elFinder</b> (open-source web application file manager)</figcaption>
       </figure>
@@ -195,20 +195,20 @@ username=1' OR 1=1 -- &amp;password=anything</pre>
       <p>tbh i kinda idk what to do here next i look into the repo and stuff and then i try google elfinder exploit. saw some interesting link and existing CVE for elfinder. maybe this version is old too?? so i try to go find the version on the site</p>
 
       <figure>
-        <img src="/img/lookup/im24.png" alt="elFinder about/version">
+        <img src="/img/lookup/im24.webp" alt="elFinder about/version">
         <figcaption>in the about here we can see its version <b>2.1.47</b></figcaption>
       </figure>
 
        <figure>
-        <img src="/img/lookup/im25.png" alt="elFinder about/version">
+        <img src="/img/lookup/im25.webp" alt="elFinder about/version">
         <figcaption>we found the exact exploit for the vuln yayyyy (elfinder 2.1.47 command injection)</figcaption>
       </figure>
 
       <h2>metasploit foothold</h2>
 
         <div class="fig-row equal">
-        <figure><img class="zoomable" src="/img/lookup/IM26.png" alt="Req"></figure>
-        <figure><img class="zoomable" src="/img/lookup/im27.png" alt="Resp"></figure>
+        <figure><img class="zoomable" src="/img/lookup/IM26.webp" alt="Req"></figure>
+        <figure><img class="zoomable" src="/img/lookup/im27.webp" alt="Resp"></figure>
         </div>
 
       <pre class="cmd">msfconsole
@@ -219,34 +219,31 @@ username=1' OR 1=1 -- &amp;password=anything</pre>
     exploit</pre>
 
       <figure>
-        <img src="/img/lookup/im28.png" alt="Meterpreter www-data">
+        <img src="/img/lookup/im28.webp" alt="Meterpreter www-data">
         <figcaption>After running <code>getuid</code>, we have a shell as <b>www-data</b>!!!</figcaption>
       </figure>
 
       <h2>Privilege Escalation Enumeration</h2>
       <p>After getting a shell as <code>www-data</code>, i checked <code>/etc/passwd</code> and found <code>root</code>, <code>think</code>, <code>ssm-user</code>, <code>ubuntu</code>…</p>
-      <figure><img class="zoomable" src="/img/lookup/im29.png" alt="Req"></figure>
+      <figure><img class="zoomable" src="/img/lookup/im29.webp" alt="Req"></figure>
 
       <p>Next, i explored the user directories. In <code>/home/think</code> i found an interesting file called <b>.passwords</b> but i don’t have permission to read it.</p>
 
       <figure>
-        <img src="/img/lookup/im30.png" alt="/home/think/.passwords exists">
+        <img src="/img/lookup/im30.webp" alt="/home/think/.passwords exists">
         <figcaption>okay, if i can’t read it directly, maybe privesc via SUID can help</figcaption>
       </figure>
 
       <pre class="cmd">find / -perm -4000 2>/dev/null</pre>
       <figure>
-        <img src="/img/lookup/im31.png" alt="find SUID results">
+        <img src="/img/lookup/im31.webp" alt="find SUID results">
         <figcaption>one entry stands out: <code>/usr/sbin/pwm</code> (not a default SUID)</figcaption>
       </figure>
 
-     
-
-
       <figure>
         <div class="fig-row equal">
-        <figure><img class="zoomable" src="/img/lookup/32.png" alt="Req"></figure>
-        <figure><img class="zoomable" src="/img/lookup/33.png" alt="Resp"></figure>
+        <figure><img class="zoomable" src="/img/lookup/32.webp" alt="Req"></figure>
+        <figure><img class="zoomable" src="/img/lookup/33.webp" alt="Resp"></figure>
         </div>
 
         <figcaption>running it shows it calls <code>id</code> and then tries <code>/home/&lt;username&gt;/.passwords</code></figcaption>
@@ -260,7 +257,7 @@ chmod +x /tmp/id
 /usr/sbin/pwm     # now it reads /home/think/.passwords</pre>
 
       <figure>
-        <img src="/img/lookup/34.png" alt="Dumped passwords content">
+        <img src="/img/lookup/34.webp" alt="Dumped passwords content">
         <figcaption>password list dumped — save it and try brute force user back on my Vm</figcaption>
       </figure>
 
@@ -272,8 +269,8 @@ medusa -h lookup.thm -u think -P think_pass.txt -M ssh</pre>
 
       <figure>
         <div class="fig-row equal">
-        <figure><img class="zoomable" src="/img/lookup/35.png" alt="Req"></figure>
-        <figure><img class="zoomable" src="/img/lookup/36.png" alt="Resp"></figure>
+        <figure><img class="zoomable" src="/img/lookup/35.webp" alt="Req"></figure>
+        <figure><img class="zoomable" src="/img/lookup/36.webp" alt="Resp"></figure>
         </div>
         <figcaption>Success! ssh as <code>think</code> — user flag <br> Note : User flag can be found here :D</figcaption>
       </figure>
@@ -284,7 +281,7 @@ medusa -h lookup.thm -u think -P think_pass.txt -M ssh</pre>
 sudo /usr/bin/look '' /root/.ssh/id_rsa</pre>
 
       <figure>
-        <img src="/img/lookup/ssh.png" alt="Root SSH key dumped">
+        <img src="/img/lookup/ssh.webp" alt="Root SSH key dumped">
         <figcaption>dump root’s private key, copy to kali, set perms, ssh as root</figcaption>
       </figure>
 
@@ -292,7 +289,7 @@ sudo /usr/bin/look '' /root/.ssh/id_rsa</pre>
 ssh -i root_key root@lookup.thm</pre>
 
       <figure>
-        <img src="/img/lookup/root.png" alt="Root shell and flag">
+        <img src="/img/lookup/root.webp" alt="Root shell and flag">
         <figcaption>we in ! got the root flag and done :D</figcaption>
       </figure>
 
@@ -317,12 +314,12 @@ ssh -i root_key root@lookup.thm</pre>
 
   <!-- Lightbox overlays -->
   <a href="#lb-close" class="lightbox" id="im11" aria-label="Close image">
-    <img src="/img/lookup/im11.png" alt="Burp intercepts login.php request — full size">
+    <img src="/img/lookup/im11.webp" alt="Burp intercepts login.php request — full size">
     <span class="close" aria-hidden="true">×</span>
   </a>
 
   <a href="#lb-close" class="lightbox" id="im12" aria-label="Close image">
-    <img src="/img/lookup/im12.png" alt="Repeater response — full size">
+    <img src="/img/lookup/im12.webp" alt="Repeater response — full size">
     <span class="close" aria-hidden="true">×</span>
   </a>
 
